@@ -5,6 +5,9 @@
 * Assumptions, limitations and future work considerations.
 * Project and code structure.
 
+## Solution
+Two-stage model: image --> detect scoreboards --(best scoring proposal)--> OCR --> string filtering --> result
+
 ## Project and Code Structure
 
 ### Exploration stage (Jupyter notebooks)
@@ -36,10 +39,40 @@
 [mmdetection](https://github.com/open-mmlab/mmdetection) (Apache License 2.0)
 ```
 from mmdet.apis import init_detector, inference_detector
+from ocr import OCR_Tesseract, StringProcessor
+
 model = init_detector(
         config_file, checkpoint_file, device='cuda:0')
-results = inference_detector(model, imgs)
+result = inference_detector(model, img)
+
+(...) # unpack results
+
+ocr = OCR_Tesseract()
+string_processor = StringProcessor()
+text = ocr.extract(img[y1:y2, x1:x2])
+extracted_info = string_processor.read_values(text)
 ```
 
 ## Evaluation
 [Report](REPORT.md)
+
+### Hardware config.
+2x Tesla K80 12GB   
+
+## Review of the research field relevant
+* [mmdetection](https://github.com/open-mmlab/mmdetection) -- a complete toolkit, novel architectures (well-maintained), model perfromance (often incl. FP etc.) info, pre-trained checkpoints, APIs, deployment tools.
+* Performance comparison - any good paper -> experimental results and comparison section. 
+* Tesseract tutorial: https://nanonets.com/blog/ocr-with-tesseract/#ocrwithpytesseractandopencv
+
+## Assumptions, limitations and future work considerations.
+Assumptions: 
+* One scoreboard in one frame.
+* Names, initals and surnames first, followed by numerical scores.
+* The longest substring is surname.
+* `>` is the only indicator that can be extracted.
+
+Limitations:
+
+Future work direction:
+* Serving indicator --> string processing (rigid) or a simple classification network (data and overfitting)?
+* 
