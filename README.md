@@ -68,14 +68,14 @@ extracted_info = string_processor.read_values(text)
 * Tesseract tutorial: https://nanonets.com/blog/ocr-with-tesseract/#ocrwithpytesseractandopencv
 
 ## Assumptions, limitations and future work considerations.
-Assumptions: 
+Assumptions and Limitations: 
 * One scoreboard in one frame.
 * Names, initals and surnames first, followed by numerical scores.
 * The longest substring is surname.
 * `>` is the only indicator that can be extracted.
 
-Limitations:
-
 Future work direction:
-* Serving indicator --> string processing (rigid) or a simple classification network (data and overfitting)?
-* 
+* Selection of a more efficient architecture
+* Error analysis
+* Pre-processing for OCR
+* Performance benchmarking (memory, FPS) 
