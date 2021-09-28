@@ -79,3 +79,4 @@ Future work direction:
 * Error analysis
 * Pre-processing for OCR
 * Performance benchmarking (memory, FPS) 
+* Inference only on the BL quarter of the image?
