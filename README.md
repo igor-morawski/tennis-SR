@@ -1,4 +1,5 @@
 # [Demo](https://drive.google.com/file/d/1Pcqzh_ae1eSYSJWcBanTlCMMB6A2VhmM/view?usp=sharing) on the hold-out set
+and [Error analysis](https://docs.google.com/presentation/d/13hVaKFBhUEU02q0IzpeMCW-YAYrG8Pp7AEZr7tx6nNA/edit?usp=sharing) (kind of)
 
 # tennis-SR
 * Coded prototype (in Python) capable of solving the task or part of the task.
