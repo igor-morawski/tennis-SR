@@ -16,13 +16,13 @@ Two-stage model: image --> detect scoreboards --(best scoring proposal)--> OCR -
 ### Exploration stage (Jupyter notebooks)
 1. [preprocessing.ipynb](preprocessing.ipynb)
 * Extracting frames from the video.
-1. [preprocessing_ann.ipynb](preprocessing_ann.ipynb)
+2. [preprocessing_ann.ipynb](preprocessing_ann.ipynb)
 * Dataset splits: train, val, test (70:15:15).
-1. [exploring_scoreboards.ipynb](exploring_scoreboards.ipynb)
+3. [exploring_scoreboards.ipynb](exploring_scoreboards.ipynb)
 * Tesseract for OCR
 * Preprocessing scoreboards for OCR.
 * Postprocessing text extracted from scoreboards.
-1. [train_ssd.ipynb](train_ssd.ipynb)
+4. [train_ssd.ipynb](train_ssd.ipynb)
 * Mmdet config.
 * Checkpoint selection.
 
@@ -35,7 +35,7 @@ Two-stage model: image --> detect scoreboards --(best scoring proposal)--> OCR -
 * Evaluate:
     * TP, TN, FP, FN counting, 
     * saving evaluation results to demo.json
-1. report.py
+2. report.py
 * Generate report from demo.json and mmdet logs
 
 ## Coded Prototype
